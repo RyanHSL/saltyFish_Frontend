@@ -28,7 +28,7 @@ function App() {
     setSavedList(prev => 
       prev.includes(serviceId) ? prev.filter(id => id !== serviceId) : 
       [...prev, serviceId]
-    ) // add it if it is not in the watch list. remove it if it is in the watch list
+    ) 
   } 
 
   return (
