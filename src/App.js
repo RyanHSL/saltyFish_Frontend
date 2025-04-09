@@ -1,23 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
+import { useReducer } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ServiceGrid from './components/ServiceGrid';
+import SavedList from './components/SavedList';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import serviceReducer from './reducers/serviceReducer';
+import { sortService } from './utils/sortService';
 
 function App() {
+
+  const [services, setServices] = useState([]);
+  const [savedList, setSavedList] = useState([]);
+
+  // const initialState = {services: [], editingService: null, sortPreference: "High to Low"};
+  // const [state, dispatch] = useReducer(serviceReducer, initialState);
+  // const sortedServices = sortService(state.services, state.sortPreference);
+
+  useEffect(() => {
+    fetch("services.json")
+    .then(response => response.json())
+    .then(data => setServices(data))
+  }, []);
+
+  const toggleSavedList = (serviceId) => {
+    setSavedList(prev => 
+      prev.includes(serviceId) ? prev.filter(id => id !== serviceId) : 
+      [...prev, serviceId]
+    ) // add it if it is not in the watch list. remove it if it is in the watch list
+  } 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <Header></Header>
+        <Router>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/savedList">Saved Services</Link>
+              </li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path="/" 
+            element={<ServiceGrid services={services} savedList={savedList} toggleSavedList={toggleSavedList}/>}></Route>
+            <Route path="/savedList"
+            element={<SavedList savedList={savedList} services={services} toggleSavedList={toggleSavedList}/>}></Route>
+          </Routes>
+        </Router>
+
+      </div>
+      <Footer></Footer>
     </div>
   );
 }

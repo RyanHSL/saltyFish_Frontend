@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Ryan's Senior Care",
+    "image": "care.jpg",
+    "category": "care",
+    "rating": "8.3"
+  },
+  {
+    "id": 2,
+    "title": "Ryan's House Cleaning",
+    "image": "cleaning.jpg",
+    "category": "cleaning",
+    "rating": "7.7"
+  },
+  {
+    "id": 3,
+    "title": "Ryan's Family Meal",
+    "image": "cooking.jpg",
+    "category": "cooking",
+    "rating": "6.3"
+  },
+  {
+    "id": 4,
+    "title": "Kristine's Makeup",
+    "image": "makeup.jpg",
+    "category": "makeup",
+    "rating": "9.3"
+  },
+  {
+    "id": 5,
+    "title": "Ryan's Moving",
+    "image": "moving.jpg",
+    "category": "moving",
+    "rating": "6.9"
+  },
+  {
+    "id": 6,
+    "title": "Ryan's Ride",
+    "image": "ride.jpg",
+    "category": "ride",
+    "rating": "8.4"
+  },
+  {
+    "id": 7,
+    "title": "Kristine's Used Good",
+    "image": "usedGoods.jpg",
+    "category": "usedGoods",
+    "rating": "9.8"
+  },
+  {
+    "id": 8,
+    "title": "Other Services",
+    "image": "others.jpg",
+    "category": "other",
+    "rating": "7.2"
+  }
+]
