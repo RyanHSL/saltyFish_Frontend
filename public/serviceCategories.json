@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "value": "care"
+    },
+    {
+        "id": 2,
+        "value": "cleaning"
+    },
+    {
+        "id": 3,
+        "value": "cooking"
+    },
+    {
+        "id": 4,
+        "value": "makeup"
+    },
+    {
+        "id": 5,
+        "value": "moving"
+    },
+    {
+        "id": 6,
+        "value": "ride"
+    },
+    {
+        "id": 7,
+        "value": "usedGoods"
+    },
+    {
+        "id": 8,
+        "value": "others"
+    }
+]

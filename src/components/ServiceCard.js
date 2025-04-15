@@ -23,10 +23,13 @@ export default function ServiceCard({ service, isSavedListed, toggleSavedList })
             <img src={`services_imgs/${service.image}`} alt={service.title} onError={handleError}/>
             <div className="movie-card-info">
                 <h3 className="movie-card-title">{service.title}</h3>
-                    <div>
-                        <span className="movie-card-genre">{service.category}</span>
-                        <span className={`movie-card-rating ${getRatingClass(service.rating)}`}>{service.rating}</span>
-                    </div>
+                
+                <div className="movie-card-details">
+                <span className="movie-card-category">{service.category}</span>
+                <span className={`movie-card-rating ${getRatingClass(service.rating)}`}>{service.rating}</span>
+                </div>
+                
+                <p className="movie-card-description">{service.description}</p>
                     <label className="switch">
                         <input type="checkbox" checked={isSavedListed} onChange={() => toggleSavedList(service.id)}></input>
                         <span className="slider">

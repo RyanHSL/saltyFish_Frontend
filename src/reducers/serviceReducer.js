@@ -1,8 +1,10 @@
 export default function serviceReducer(state, action) {
 
     switch (action.type) {
+        case "SET_SERVICES":
+            return {...state, services: action.payload};
         case "ADD_SERVICE":
-            return {...state, services: [...state.tickets, action.payload]};
+            return {...state, services: [...state.services, action.payload]};
         case "UPDATE_SERVICE":
             return {
                 ...state, services: state.services.map(service => 

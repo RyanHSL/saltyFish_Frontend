@@ -8,21 +8,22 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import serviceReducer from './reducers/serviceReducer';
 import { sortService } from './utils/sortService';
+import ServiceForm from './components/ServiceForm';
 
 function App() {
 
-  const [services, setServices] = useState([]);
+  // const [services, setServices] = useState([]);
   const [savedList, setSavedList] = useState([]);
 
-  // const initialState = {services: [], editingService: null, sortPreference: "High to Low"};
-  // const [state, dispatch] = useReducer(serviceReducer, initialState);
-  // const sortedServices = sortService(state.services, state.sortPreference);
+  const initialState = {services: [], editingService: null, sortPreference: "High to Low"};
+  const [state, dispatch] = useReducer(serviceReducer, initialState);
+  const sortedServices = sortService(state.services, state.sortPreference);
 
-  useEffect(() => {
-    fetch("services.json")
-    .then(response => response.json())
-    .then(data => setServices(data))
-  }, []);
+  // useEffect(() => {
+  //   fetch("services.json")
+  //   .then(response => response.json())
+  //   .then(data => setServices(data))
+  // }, []);
 
   const toggleSavedList = (serviceId) => {
     setSavedList(prev => 
@@ -44,13 +45,22 @@ function App() {
               <li>
                 <Link to="/savedList">Saved Services</Link>
               </li>
+              <li>
+                <Link to="/addService">Add Service</Link>
+              </li>
             </ul>
           </nav>
           <Routes>
             <Route path="/" 
-            element={<ServiceGrid services={services} savedList={savedList} toggleSavedList={toggleSavedList}/>}></Route>
+            element={<ServiceGrid services={state.services} savedList={savedList} toggleSavedList={toggleSavedList}/>}></Route>
             <Route path="/savedList"
-            element={<SavedList savedList={savedList} services={services} toggleSavedList={toggleSavedList}/>}></Route>
+            element={<SavedList savedList={savedList} services={state.services} toggleSavedList={toggleSavedList}/>}></Route>
+            <Route path='/addService'
+            element={<div>
+                <h1 className="title">Service Registry</h1>
+                <ServiceForm dispatch={dispatch} editingService={state.editingService}></ServiceForm>
+            </div>}>
+            </Route>
           </Routes>
         </Router>
 

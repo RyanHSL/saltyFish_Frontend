@@ -31,6 +31,14 @@
     border: 1px solid #ccc;
   }
   
+  .rating-input {
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+  }
+
   /* Genre and Filter Bar Styles */
   .filter-bar {
     display: flex;
@@ -108,6 +116,15 @@
   .movie-card-genre {
     font-size: 0.9rem;
     margin-right: 10px;
+  }
+
+  .movie-card-description {
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 10px;
+    padding: 0 1rem;
   }
   
   /* Watchlist Button Styles */
@@ -246,6 +263,14 @@
     transform: translateX(125px); /* Move the circle to the other side */
   }
   
+  .form-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+
   input:checked + .slider {
     background-color: #FFA100;
   }
