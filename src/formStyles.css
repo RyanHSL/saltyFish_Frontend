@@ -1,0 +1,75 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    height: 100vh;
+    padding: 16px;
+  }
+  
+  .Header {
+    text-align: center;
+  }
+  
+  .Logo {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .Title {
+    margin: 0;
+  }
+  
+  .AppContainer {
+    width: 100%;
+    padding: 16px;
+    background: light-dark(#ffffff, #212121);
+    border-radius: 16px;
+    overflow-y: auto;
+  }
+  
+.Form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .Form input[type="submit"] {
+    width: 100%;
+  }
+  
+  .FormFields {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 4px;
+  }
+  
+  .FormGroup {
+    display: flex;
+    gap: 4px;
+    align-items: flex-start;
+  }
+  
+  .FormField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+    flex-basis: 50%;
+    justify-content: center;
+  }
+  
+  .FormField label {
+    font-size: 14px;
+  }
+  
+  .FormField input,
+  .FormField textarea,
+  .FormField select {
+    width: 100%;
+  }
+  
+  .FormField textarea {
+    resize: none;
+  }

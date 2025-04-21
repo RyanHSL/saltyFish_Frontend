@@ -25,8 +25,8 @@ export default function ServiceCard({ service, isSavedListed, toggleSavedList })
                 <h3 className="movie-card-title">{service.title}</h3>
                 
                 <div className="movie-card-details">
-                <span className="movie-card-category">{service.category}</span>
-                <span className={`movie-card-rating ${getRatingClass(service.rating)}`}>{service.rating}</span>
+                <span className="movie-card-category">{service.category}</span><br />
+                <span className={`movie-card-rating ${getRatingClass(service.rating)}`}>Rating: {service.rating}</span>
                 </div>
                 
                 <p className="movie-card-description">{service.description}</p>

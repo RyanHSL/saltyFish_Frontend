@@ -10,7 +10,7 @@ export default function SavedList({ services, savedList, toggleSavedList }) {
                 {
                     savedList.map(id => {
                         const service = services.find(service => service.id === id);
-                        return <ServiceCard key={id} service={service} toggleSavedList={toggleSavedList}></ServiceCard>
+                        return <ServiceCard key={id} service={service} toggleSavedList={toggleSavedList} isSavedListed={true}></ServiceCard>
                     })
                 }
             </div>
